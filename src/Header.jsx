@@ -17,7 +17,7 @@ function Header() {
                 <img src="https://www.flaticon.com/svg/static/icons/svg/174/174857.svg" alt="Linked In"/>
                 <div className="header__search">
                     <SearchIcon />
-                    <input type="text"/>
+                    <input placeholder="Search" type="text"/>
                 </div>
             </div>
             <div className="header__right">
