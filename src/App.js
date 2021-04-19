@@ -4,9 +4,12 @@ import './App.css';
 import { login, logout, selectUser } from './features/userSlice';
 import Header from './Header.jsx';
 import Sidebar from './Sidebar.jsx';
+<<<<<<< HEAD
 import Feed from './Feed.jsx';
 import Login from './Login.jsx';
 import { auth } from './firebase';
+=======
+>>>>>>> parent of 3244714... Added Post component
 
 function App() {
   const user = useSelector(selectUser)
@@ -37,12 +40,12 @@ function App() {
       {!user ? <Login /> : (
       <div className="app__body">
         <Sidebar />
-        <Feed />
-        {/* Widgets */}
       </div>
       )}
 
         
+        {/* Feed */}
+        {/* Widgets */}
     </div>
   );
 }
