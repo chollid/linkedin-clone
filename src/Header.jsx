@@ -9,15 +9,29 @@ import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
 import BusinessCenterIcon from '@material-ui/icons/BusinessCenter';
 import ChatIcon from '@material-ui/icons/Chat';
 import NotificationsIcon from '@material-ui/icons/Notifications';
+import { useDispatch, useSelector } from 'react-redux';
+import { auth } from './firebase';
+import { logout, selectUser } from './features/userSlice';
+
+
+
 
 function Header() {
+    const user = useSelector(selectUser)
+    const dispatch = useDispatch();
+
+    const logoutOfApp = () => {
+        dispatch(logout())
+        auth.signOut();
+    };
+
     return (
         <div className="header">
             <div className="header__left">
                 <img src="https://www.flaticon.com/svg/static/icons/svg/174/174857.svg" alt="Linked In"/>
                 <div className="header__search">
                     <SearchIcon />
-                    <input type="text"/>
+                    <input placeholder="Search" type="text"/>
                 </div>
             </div>
             <div className="header__right">
@@ -26,7 +40,7 @@ function Header() {
                 <HeaderOption Icon={BusinessCenterIcon}title='Jobs' />
                 <HeaderOption Icon={ChatIcon}title='Messaging' />
                 <HeaderOption Icon={NotificationsIcon}title='Notifications' />
-                <HeaderOption avatar='https://cdn0.iconfinder.com/data/icons/avatar-78/128/12-512.png' title="Me" />
+                <HeaderOption avatar={user && user.photoUrl ? user.photoUrl :  'https://i.pinimg.com/736x/ee/84/b2/ee84b2357fe3c04ac3ce2bf7ead4a31f.jpg'} title={user ? user.displayName.split(' ')[0]: 'Me'} onClick={logoutOfApp} />
 
             </div>
         </div>
