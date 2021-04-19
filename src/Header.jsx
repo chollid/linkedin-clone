@@ -40,7 +40,8 @@ function Header() {
                 <HeaderOption Icon={BusinessCenterIcon}title='Jobs' />
                 <HeaderOption Icon={ChatIcon}title='Messaging' />
                 <HeaderOption Icon={NotificationsIcon}title='Notifications' />
-                <HeaderOption avatar={user.photoUrl ? user.photoUrl :  'https://i.pinimg.com/736x/ee/84/b2/ee84b2357fe3c04ac3ce2bf7ead4a31f.jpg'} title={user.displayName.split(' ')[0]} onClick={logoutOfApp} />
+                <HeaderOption avatar={user ? user.photoUrl : null} title="Me" onClick={logoutOfApp} />
+                {/* <HeaderOption avatar={user && user.photoUrl ? user.photoUrl :  'https://i.pinimg.com/736x/ee/84/b2/ee84b2357fe3c04ac3ce2bf7ead4a31f.jpg'} title={user ? user.displayName.split(' ')[0]: "Me"} onClick={logoutOfApp} /> */}
 
             </div>
         </div>
