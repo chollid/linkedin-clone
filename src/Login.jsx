@@ -14,6 +14,16 @@ function Login() {
 
     const loginToApp = (e) => {
         e.preventDefault(); 
+
+        auth.signInWithEmailAndPassword(email, password)
+        .then(userAuth => {
+            dispatch(login({
+                email: userAuth.user.email,
+                uid: userAuth.user.uid,
+                displayName: userAuth.user.displayName,
+                profileUrl: userAuth.user.photoURL,
+            }))
+        }).catch(error => alert(error));
     };
     
     const register = () => {
@@ -35,7 +45,7 @@ function Login() {
                     photoUrl: profilePic,
                 }));
             });
-        }).catch(error => alert(error.message));
+        }).catch(error => alert(error));
     };
 
     return (
@@ -45,7 +55,7 @@ function Login() {
             <form>
                 <input value={name} onChange={e => setName(e.target.value)} placeholder="Full name (required if registering)" type="text"/>
 
-                <input value={profilePic} onChange={e => setProfilePic(e => e.target.value)} placeholder="Profile pic URL (optional)" type="text"/>
+                <input value={profilePic} onChange={e => setProfilePic(e.target.value)} placeholder="Profile pic URL (optional)" type="text"/>
 
                 <input value={email} onChange={e => setEmail(e.target.value)} placeholder="email" type="email"/>
                 
