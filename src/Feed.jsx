@@ -43,7 +43,7 @@ function Feed() {
 
         setInput('');
     }
-    const deletePost = () => {
+    const deletePost = (id) => {
         db.collection('posts').doc(posts.id).delete()
     }
 
