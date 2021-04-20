@@ -80,11 +80,12 @@
 
 .recentItems {
     font-size: 13px;
-    color: gray;
+    color: rgb(165, 122, 179);
     font-weight: bolder;
 }
 
 .recentItems p {
+    font-weight: 400;
     cursor: pointer;
     margin-bottom: 5px;
     padding: 5px;
@@ -103,5 +104,7 @@
 }
 
 .recentItems span {
+    font-weight: 600;
     margin: 0 10px 0 5px;
+    color: rgb(95, 95, 95);
 }

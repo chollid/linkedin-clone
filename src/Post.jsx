@@ -21,6 +21,9 @@ const Post = forwardRef(({ name, description, message, photoUrl }, ref) => {
             <div className="post__body">
                 <p>{message}</p>
             </div>
+            <div className="post__divider">
+                
+            </div>
 
             <div className="post__buttons">
                 <InputOption  Icon={ThumbUpAltOutlinedIcon} title="Like" color="#0077B7" />

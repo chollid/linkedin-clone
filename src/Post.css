@@ -30,8 +30,13 @@
 .post__buttons {
     display: flex;
     justify-content: space-evenly;
+  
+    height: 50px;
 }
 
-
+.post__divider {
+    margin-top: 15px;
+    border-top: 1px solid rgb(236, 236, 236);
+}
 
 
