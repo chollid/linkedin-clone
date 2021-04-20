@@ -7,8 +7,12 @@ import ThumbUpAltOutlinedIcon from '@material-ui/icons/ThumbUpAltOutlined';
 import ChatOutlinedIcon from '@material-ui/icons/ChatOutlined';
 import ShareOutlinedIcon from '@material-ui/icons/ShareOutlined';
 import SendOutlinedIcon from '@material-ui/icons/SendOutlined';
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
+import { db } from './firebase';
 
-const Post = forwardRef(({ name, description, message, photoUrl }, ref) => {
+const Post = forwardRef(({ name, description, message, photoUrl, deletePost }, ref) => {
+
+
     return (
         <div ref={ref} className="post">
             <div className="post__header">
@@ -17,12 +21,15 @@ const Post = forwardRef(({ name, description, message, photoUrl }, ref) => {
                     <h2>{name}</h2>
                     <p>{description}</p>
                 </div>
+                <div onClick={deletePost} className="post__delete">
+                <DeleteForeverIcon />
+                </div>
             </div>
             <div className="post__body">
                 <p>{message}</p>
             </div>
             <div className="post__divider">
-                
+              
             </div>
 
             <div className="post__buttons">

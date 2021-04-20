@@ -29,6 +29,7 @@ function Feed() {
         ))
     }, [])
 
+
     const sendPost = e => {
         e.preventDefault();
 
@@ -42,6 +43,10 @@ function Feed() {
 
         setInput('');
     }
+    const deletePost = () => {
+        db.collection('posts').doc(posts.id).delete()
+    }
+
 
     return (
         <div className="feed">
@@ -70,6 +75,7 @@ function Feed() {
                         description={description}
                         message={message}
                         photoUrl={photoUrl}
+                        deletePost={deletePost}
                     />
                 ))}
             </FlipMove>
