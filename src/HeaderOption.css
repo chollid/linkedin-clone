@@ -21,3 +21,8 @@
     height: 25px !important;
     width: 25px !important;
 }
+
+.headerOption__icon:hover {
+    filter: drop-shadow(-2px 2px 1px #a5a5a5);
+    color: #0077B7;
+}

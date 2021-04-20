@@ -35,6 +35,11 @@
     color: #ffffff;
     background-color: #0074b1;
     border-radius: 8px;
+    cursor: pointer;
+}
+
+.login > form > button:hover {
+    background-color: #0284ca;
 }
 
 .login__register {

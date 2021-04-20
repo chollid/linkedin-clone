@@ -6,13 +6,14 @@ import Header from './Header.jsx';
 import Sidebar from './Sidebar.jsx';
 import Feed from './Feed.jsx';
 import Login from './Login.jsx';
+import Widgets from './Widgets.jsx';
 import { auth } from './firebase';
 
 function App() {
   const user = useSelector(selectUser)
   const dispatch = useDispatch()
 
-  
+
   useEffect(() => {
     auth.onAuthStateChanged(userAuth => {
       if (userAuth) {
@@ -39,7 +40,7 @@ function App() {
       <div className="app__body">
         <Sidebar />
         <Feed />
-        {/* Widgets */}
+        <Widgets />
       </div>
       )}
 

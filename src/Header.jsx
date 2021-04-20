@@ -4,11 +4,11 @@ import HeaderOption from './HeaderOption';
 
 // icons
 import SearchIcon from '@material-ui/icons/Search';
-import HomeIcon from '@material-ui/icons/Home';
+import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
 import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
 import BusinessCenterIcon from '@material-ui/icons/BusinessCenter';
 import ChatIcon from '@material-ui/icons/Chat';
-import NotificationsIcon from '@material-ui/icons/Notifications';
+import NotificationsActiveOutlinedIcon from '@material-ui/icons/NotificationsActiveOutlined';
 import { useDispatch, useSelector } from 'react-redux';
 import { auth } from './firebase';
 import { logout, selectUser } from './features/userSlice';
@@ -35,13 +35,13 @@ function Header() {
                 </div>
             </div>
             <div className="header__right">
-                <HeaderOption Icon={HomeIcon} title='Home' />
+                <HeaderOption Icon={HomeOutlinedIcon} title='Home' />
                 <HeaderOption Icon={SupervisorAccountIcon}title='My Network' />
                 <HeaderOption Icon={BusinessCenterIcon}title='Jobs' />
                 <HeaderOption Icon={ChatIcon}title='Messaging' />
-                <HeaderOption Icon={NotificationsIcon}title='Notifications' />
-                <HeaderOption avatar={user ? user.photoUrl : null} title="Me" onClick={logoutOfApp} />
-                {/* <HeaderOption avatar={user && user.photoUrl ? user.photoUrl :  'https://i.pinimg.com/736x/ee/84/b2/ee84b2357fe3c04ac3ce2bf7ead4a31f.jpg'} title={user ? user.displayName.split(' ')[0]: "Me"} onClick={logoutOfApp} /> */}
+                <HeaderOption Icon={NotificationsActiveOutlinedIcon}title='Notifications' />
+                {/* <HeaderOption avatar={user ? user.photoUrl : null} title="Me" onClick={logoutOfApp} /> */}
+                <HeaderOption avatar={user && user.photoUrl ? user.photoUrl :  'https://i.pinimg.com/736x/ee/84/b2/ee84b2357fe3c04ac3ce2bf7ead4a31f.jpg'} title={user ? user.displayName.split(' ')[0]: "Me"} onClick={logoutOfApp} />
 
             </div>
         </div>
